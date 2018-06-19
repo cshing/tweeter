@@ -22,3 +22,7 @@ form .counter {
     font-style: italic;
     padding-left: 77%;
 }
+
+form .negative {
+    color: red;
+}
