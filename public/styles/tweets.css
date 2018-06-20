@@ -60,6 +60,8 @@
 .tweets p {
     display: inline-block;
     padding: 0px 10px 0px 10px;
+    width: 385px;
+    word-wrap: break-word;
 }
 
 .tweets .hidden-icon {
