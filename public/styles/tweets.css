@@ -4,8 +4,16 @@
   } */
 
 .tweets {
-    border: 1px solid darkgray;
+    border: 1px solid lightgray;
     border-radius: 8px;
+}
+
+.tweets:hover {
+    border: 1px solid darkgray;
+}
+
+.tweets:hover h4 {
+    color: slategray;
 }
 
 .tweets header {
@@ -44,11 +52,26 @@
     font-weight: 100;
 }
 
+.tweets footer {
+    border-top: 1px solid #eeee;
+    font-size: 15px;
+}
+
 .tweets p {
+    display: inline-block;
     padding: 0px 10px 0px 10px;
 }
 
-.tweets footer {
-    border-top: 1px solid #eeee;
-    font-size: 12px;
+.tweets .hidden-icon {
+    display: inline-block;
+    float: right;
+    margin: 0;
+    padding: 13px 12px 10px 10px;
+    word-spacing: 8px;
+    font-size: 19px;
+    color: transparent;
+}
+
+.tweets:hover .hidden-icon {
+    color: lightseagreen;
 }
