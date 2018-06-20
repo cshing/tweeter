@@ -1,4 +1,4 @@
-/* .tweeter-container {
+/* .tweets-container {
     border: 1px solid red;
     background-color: white
   } */
@@ -6,6 +6,7 @@
 .tweets {
     border: 1px solid lightgray;
     border-radius: 8px;
+    margin-bottom: 10px;
 }
 
 .tweets:hover {

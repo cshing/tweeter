@@ -14,9 +14,3 @@ $(document).ready(function() {
         }
     })
 })
-
-
-
-// $(textarea).addEventListener('keyup', function(e) {
-//     console.log("hi")
-//   });
