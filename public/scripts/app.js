@@ -51,51 +51,75 @@ const tweetData = [
     }
   ];
 
-  $(document).ready(function() {
+$(document).ready(function() {
+
+    function createTweetElement(tweet) {
+    let $HTMLObj = `
+        <article class="tweets">
+            <header>
+                <img class="user-avatar" src=${tweet.avatar}>
+                <h2 name="userName">${tweet.name} </h2>
+                <h4 name="userHandle">${tweet.handle}</h4>
+            </header>
+
+            <p>${tweet.content}</p>
+
+            <footer>
+                <p name="timestamp">${tweet.created_at} days ago</p>
+                <span class=hidden-icon> 
+                <i class="fas fa-flag"></i>
+                <i class="fas fa-retweet"></i>
+                <i class="fas fa-heart"></i></span>
+            </footer>
+        </article> `
+
+    return $HTMLObj;
+    }
 
     function renderTweets(tweets) {
         // loops through tweets
-          // calls createTweetElement for each tweet
-          // takes return value and appends it to the tweets container
-
+            // calls createTweetElement for each tweet
+            // takes return value and appends it to the tweets container
+    
         for (let atweet in tweets) {
             let newTweetObj = {
                 name: tweets[atweet].user.name,
                 avatar: tweets[atweet].user.avatars.small,
                 handle: tweets[atweet].user.handle,
                 content: tweets[atweet].content.text,
-                created_at: Math.round(((tweets[atweet].created_at) / 86400000000))
+                created_at: Math.round(((tweets[atweet].created_at) / 86400000000))  //use moment library:)
             }
-
+    
             let result = createTweetElement(newTweetObj)
             $('.tweets-container').append(result)
         }
         return; 
-    }
+        }
+    
+        //call renderTweets function, passing in tweetData
+        renderTweets(tweetData);
 
-    //call renderTweets function, passing in tweetData
-    renderTweets(tweetData);
 
-    function createTweetElement(tweet) {
-        let $HTMLObj = `
-            <article class="tweets">
-                <header>
-                    <img class="user-avatar" src=${tweet.avatar}>
-                    <h2 name="userName">${tweet.name} </h2>
-                    <h4 name="userHandle">${tweet.handle}</h4>
-                </header>
+    $('form').on('submit', function(e) {
+        e.preventDefault();
 
-                <p>${tweet.content}</p>
+        // 1. Get the data from the form
+        let data = $('form').serialize();
 
-                <footer>
-                    <p name="timestamp">${tweet.created_at} days ago</p>
-                    <spam class=hidden-icon> 
-                    <i class="fas fa-flag"></i>
-                    <i class="fas fa-retweet"></i>
-                    <i class="fas fa-heart"></i></span>
-                </footer>
-            </article> `
+        // 2. Make a AJAX request using that data
+        $.ajax('/tweets', {
+        method: 'POST',
+        data: data
+        }).done(function(data) {
 
-        return $HTMLObj;
-    }
+            // // 3. Make the new tweet show up
+            // let $tweet = createTweetElement(data);
+            // $('.tweets-container').prepend($tweet);
+
+            // 4. Clear the form
+            $('form textarea').val("");
+
+        })
+
+    })
 })
