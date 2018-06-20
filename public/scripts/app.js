@@ -96,8 +96,8 @@ $(document).ready(function() {
         return; 
         }
     
-        //call renderTweets function, passing in tweetData
-        renderTweets(tweetData);
+    //call renderTweets function, passing in tweetData
+    // renderTweets(tweetData);
 
     function loadTweets() {
         $.ajax('/tweets').done(function(data) {
@@ -106,7 +106,8 @@ $(document).ready(function() {
         })
     }
 
-    loadTweets()
+    loadTweets(tweetData)
+
 
     $('form').on('submit', function(e) {
         e.preventDefault();
@@ -121,12 +122,10 @@ $(document).ready(function() {
         }).done(function(data) {
 
             // 3. Make the new tweet show up
-            // let $tweet = createTweetElement(data);
-            // $('.tweets-container').prepend(createTweetElement(data));
             loadTweets();
+
             // 4. Clear the form
             $('form textarea').val("");
-
         })
 
     })
