@@ -44,7 +44,6 @@
 }
 
 .tweets h4 {
-    display: inline-block;
     float: right;
     padding-right: 5px;
     font-size: 15px;
@@ -63,7 +62,6 @@
 }
 
 .tweets .hidden-icon {
-    display: inline-block;
     float: right;
     margin: 0;
     padding: 13px 12px 10px 10px;
