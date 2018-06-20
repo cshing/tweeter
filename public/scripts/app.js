@@ -91,7 +91,7 @@ $(document).ready(function() {
             }
     
             let result = createTweetElement(newTweetObj)
-            $('.tweets-container').append(result)
+            $('.tweets-container').prepend(result)
         }
         return; 
         }
@@ -99,6 +99,14 @@ $(document).ready(function() {
         //call renderTweets function, passing in tweetData
         renderTweets(tweetData);
 
+    function loadTweets() {
+        $.ajax('/tweets').done(function(data) {
+            // $('.tweets-container').html('');
+            renderTweets(data);
+        })
+    }
+
+    loadTweets()
 
     $('form').on('submit', function(e) {
         e.preventDefault();
@@ -112,10 +120,10 @@ $(document).ready(function() {
         data: data
         }).done(function(data) {
 
-            // // 3. Make the new tweet show up
+            // 3. Make the new tweet show up
             // let $tweet = createTweetElement(data);
-            // $('.tweets-container').prepend($tweet);
-
+            // $('.tweets-container').prepend(createTweetElement(data));
+            loadTweets();
             // 4. Clear the form
             $('form textarea').val("");
 
