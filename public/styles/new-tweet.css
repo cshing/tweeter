@@ -1,18 +1,19 @@
-section {
+.new-tweet {
     padding: 0.5em 1em 0.5em 1em;
     margin: auto;
+    margin-bottom: 50px;
     border-radius: 8px;
     background-color: #eee;
     border: 1px solid lightgray;
 }
 
-h2 {
+.new-tweet h2 {
     margin-top: 0px;
     margin-bottom: 18px;
     border-bottom: 1px solid black;
 }
 
-textarea {
+.textarea {
     padding: 4px 4px 4px 4px;
     width: 100%;
 }

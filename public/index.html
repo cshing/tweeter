@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
@@ -31,14 +32,32 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+
       <section class="new-tweet">
-          <h2>Compose Tweet</h2>
-          <form method="POST" action="/tweets/">
-            <textarea class="textarea" name="text" placeholder="What are you humming about?"></textarea>
-            <input type="submit" value="Tweet">
-            <span class="counter">140</span>
-          </form>
-        </section>
+        <h2>Compose Tweet</h2>
+        <form method="POST" action="/tweets/">
+          <textarea class="textarea" name="text" placeholder="What are you humming about?"></textarea>
+          <input type="submit" value="Tweet">
+          <span class="counter">140</span>
+        </form>
+      </section>
+
+      <section class="tweeter-container">
+        <article class="tweets">
+          <header>
+            <img class="user-avatar" src="https://cdn1.vectorstock.com/i/1000x1000/29/50/kawaii-cute-fat-white-cat-anime-style-vector-20032950.jpg">
+            <h2 name="userName">Bill Fields </h2>
+            <h4 name="userHandle">@MrFields</h4>
+            
+          </header>
+         
+            <p>this is the first tweet!!!!!this is the first tweet!!!!!this is the first tweet!!!!!this is the first tweet!!!!!this is the first tweet!!!!!</p>
+         
+          <footer>
+            <p>timestamp</p>
+          </footer>
+        </article>
+      </section>
 
 
     </main>
