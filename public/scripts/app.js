@@ -104,8 +104,9 @@ $(document).ready(function() {
                 // 3. Make the new tweet show up
                 loadTweets();
 
-                // 4. Clear the form
+                // 4. Clear the form, reset counter to 140
                 $('form textarea').val("");
+                $('.counter').text("140");
             })
             return;
         }
