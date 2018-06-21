@@ -110,11 +110,21 @@ $(document).ready(function() {
             return;
         }
         if (!validData) {
-            alert("Empty message!");
+            $.toast({
+                heading: 'Warning',
+                text: 'Opps, empty message...',
+                showHideTransition: 'slide',
+                icon: 'warning'
+            })
             return;
         }
         if (!validDataLength) {
-            alert("Message exceeds maximum length!");
+            $.toast({
+                heading: 'Warning',
+                text: 'You message exceeds maximum length!',
+                showHideTransition: 'slide',
+                icon: 'warning'
+            })
             return;
         }
     });
