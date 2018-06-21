@@ -119,6 +119,7 @@ $(document).ready(function() {
         }
     });
     $('.compose-btn').click(function() {
-        $(".new-tweet").slideToggle();
+        $('.new-tweet').slideToggle();
+        $(".textarea").focus();
     })
 });
