@@ -9,6 +9,8 @@ $(document).ready(function() {
     // loadTweets first to fetch the original 3 tweets from database
     loadTweets();
 
+    $('.new-tweet').slideToggle();
+
     function escape(str) {
         let div = document.createElement('div');
         div.appendChild(document.createTextNode(str));
@@ -116,4 +118,7 @@ $(document).ready(function() {
             return;
         }
     });
+    $('.compose-btn').click(function() {
+        $(".new-tweet").slideToggle();
+    })
 });
