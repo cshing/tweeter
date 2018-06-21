@@ -52,16 +52,23 @@
     font-weight: 100;
 }
 
-.tweets footer {
-    border-top: 1px solid #eeee;
-    font-size: 15px;
-}
-
 .tweets p {
     display: inline-block;
     padding: 0px 10px 0px 10px;
     width: 385px;
     word-wrap: break-word;
+}
+
+.tweets footer {
+    border-top: 1px solid #eeee;
+    font-size: 15px;
+}
+
+
+.tweets footer p {
+    display: inline-block;
+    padding: 0px 10px 0px 10px;
+    width: 250px;
 }
 
 .tweets .hidden-icon {
