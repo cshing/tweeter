@@ -9,20 +9,25 @@ $(document).ready(function() {
     // loadTweets first to fetch the original 3 tweets from database
     loadTweets();
 
+    function escape(str) {
+        let div = document.createElement('div');
+        div.appendChild(document.createTextNode(str));
+        return div.innerHTML;
+      }
 
     function createTweetElement(tweet) {
     let $HTMLObj = `
         <article class="tweets">
             <header>
-                <img class="user-avatar" src=${tweet.avatar}>
-                <h2 name="userName">${tweet.name} </h2>
-                <h4 name="userHandle">${tweet.handle}</h4>
+                <img class="user-avatar" src=${escape(tweet.avatar)}>
+                <h2 name="userName">${escape(tweet.name)} </h2>
+                <h4 name="userHandle">${escape(tweet.handle)}</h4>
             </header>
 
-            <p>${tweet.content}</p>
+            <p>${escape(tweet.content)}</p>
 
             <footer>
-                <p name="timestamp">${tweet.created_at} days ago</p>
+                <p name="timestamp">${escape(tweet.created_at)} days ago</p>
                 <span class=hidden-icon> 
                 <i class="fas fa-flag"></i>
                 <i class="fas fa-retweet"></i>
