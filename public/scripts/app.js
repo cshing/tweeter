@@ -6,6 +6,10 @@
 
 $(document).ready(function() {
 
+    // loadTweets first to fetch the original 3 tweets from database
+    loadTweets();
+
+
     function createTweetElement(tweet) {
     let $HTMLObj = `
         <article class="tweets">
