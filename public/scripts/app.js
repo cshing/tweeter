@@ -114,7 +114,8 @@ $(document).ready(function() {
                 heading: 'Warning',
                 text: 'Opps, empty message...',
                 showHideTransition: 'slide',
-                icon: 'warning'
+                icon: 'warning',
+                stack: 'false'
             })
             return;
         }
@@ -123,7 +124,8 @@ $(document).ready(function() {
                 heading: 'Warning',
                 text: 'You message exceeds maximum length!',
                 showHideTransition: 'slide',
-                icon: 'warning'
+                icon: 'warning',
+                stack: 'false'
             })
             return;
         }
