@@ -51,7 +51,7 @@ $(document).ready(function() {
                 avatar: tweets[atweet].user.avatars.small,
                 handle: tweets[atweet].user.handle,
                 content: tweets[atweet].content.text,
-                created_at: Math.round(((tweets[atweet].created_at) / 86400000000))  //use moment library:)
+                created_at: Math.round(((tweets[atweet].created_at) / 86400000000))
             }
     
             let result = createTweetElement(newTweetObj)
