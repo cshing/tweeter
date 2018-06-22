@@ -22,6 +22,7 @@ This repository is the starter code for the project: Students will fork and clon
 - Body-parser
 - Chance
 - md5
-- MongoDB
+- jQuery
 - jQuery-toast-plugin
+- MongoDB
 
