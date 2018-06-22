@@ -15,7 +15,7 @@ $(document).ready(function() {
         let div = document.createElement('div');
         div.appendChild(document.createTextNode(str));
         return div.innerHTML;
-      }
+    }
 
     function createTweetElement(tweet) {
     let $HTMLObj = `
@@ -42,8 +42,8 @@ $(document).ready(function() {
 
     function renderTweets(tweets) {
         // loops through tweets
-            // calls createTweetElement for each tweet
-            // takes return value and appends it to the tweets container
+        // calls createTweetElement for each tweet
+        // takes return value and appends it to the tweets container
     
         for (let atweet in tweets) {
             let tweet = tweets[atweet];
@@ -55,17 +55,17 @@ $(document).ready(function() {
                 created_at: moment(tweet.created_at).startOf('minute').fromNow()
             }
     
-            let result = createTweetElement(newTweetObj)
-            $('.tweets-container').prepend(result)
+            let result = createTweetElement(newTweetObj);
+            $('.tweets-container').prepend(result);
         }
         return; 
-        }
+    }
     
     function loadTweets() {
         $.ajax('/tweets').done(function(data) {
             $('.tweets-container').html('');
             renderTweets(data);
-        })
+        });
     }
 
     function validateData(data) {
@@ -108,7 +108,7 @@ $(document).ready(function() {
                 // 4. Clear the form, reset counter to 140
                 $('form textarea').val("");
                 $('.counter').text("140");
-            })
+            });
             return;
         }
         if (!validData) {
@@ -118,7 +118,7 @@ $(document).ready(function() {
                 showHideTransition: 'slide',
                 icon: 'warning',
                 stack: 'false'
-            })
+            });
             return;
         }
         if (!validDataLength) {
@@ -128,12 +128,13 @@ $(document).ready(function() {
                 showHideTransition: 'slide',
                 icon: 'warning',
                 stack: 'false'
-            })
+            });
             return;
         }
     });
+    
     $('.compose-btn').click(function() {
         $('.new-tweet').slideToggle();
         $(".textarea").focus();
-    })
+    });
 });
