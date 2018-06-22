@@ -1,0 +1,31 @@
+.new-tweet {
+    padding: 0.5em 1em 0.5em 1em;
+    margin: auto;
+    margin-bottom: 50px;
+    border-radius: 8px;
+    background-color: $brand-bg-color;
+    border: 1px solid lightgray;
+    display: none;
+
+    h2 {
+        margin-top: 0px;
+        margin-bottom: 18px;
+        border-bottom: 1px solid black;
+    }
+}
+
+.textarea {
+    padding: 4px 4px 4px 4px;
+    width: 100%;
+}
+
+form .counter {
+    font-size: 12px;
+    font-style: italic;
+    padding-left: 77%;
+
+    .negative {
+        color: red;
+    }
+    
+}
