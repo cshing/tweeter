@@ -29,7 +29,7 @@ $(document).ready(function() {
             <p>${escape(tweet.content)}</p>
 
             <footer>
-                <p name="timestamp">${escape(tweet.created_at)} days ago</p>
+                <p name="timestamp">${escape(tweet.created_at)}</p>
                 <span class=hidden-icon> 
                 <i class="fas fa-flag"></i>
                 <i class="fas fa-retweet"></i>
@@ -46,12 +46,13 @@ $(document).ready(function() {
             // takes return value and appends it to the tweets container
     
         for (let atweet in tweets) {
+            let tweet = tweets[atweet];
             let newTweetObj = {
-                name: tweets[atweet].user.name,
-                avatar: tweets[atweet].user.avatars.small,
-                handle: tweets[atweet].user.handle,
-                content: tweets[atweet].content.text,
-                created_at: Math.round(((tweets[atweet].created_at) / 86400000000))
+                name: tweet.user.name,
+                avatar: tweet.user.avatars.small,
+                handle: tweet.user.handle,
+                content: tweet.content.text,
+                created_at: moment(tweet.created_at).startOf('minute').fromNow()
             }
     
             let result = createTweetElement(newTweetObj)
