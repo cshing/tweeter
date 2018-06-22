@@ -11,36 +11,36 @@
     color: #e8fdff;
     float: left;
     z-index: 1;
-}
 
-#nav-bar div {
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-}
+    div {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+    }
 
-#nav-bar .logo {
-    width: 80px;
-    height: 80px;
-}
+    .logo {
+        width: 80px;
+        height: 80px;
+    }
 
-#nav-bar .header {
-    top: 20px;
-    padding-left: 10px;
-    padding-top: 20px;
-    font-size: xx-large;
-    line-height: normal;
-    width: 300px;
-}
+    .header {
+        top: 20px;
+        padding-left: 10px;
+        padding-top: 20px;
+        font-size: xx-large;
+        line-height: normal;
+        width: 300px;
+    }
 
-#nav-bar .compose-btn {
-    padding: 15px 10px 15px 10px;
-    font-size: 25px;
-    border: 1px solid black;
-    border-radius: 8px;
-    cursor: pointer;
-}
+    .compose-btn {
+        padding: 15px 10px 15px 10px;
+        font-size: 25px;
+        border: 1px solid black;
+        border-radius: 8px;
+        cursor: pointer;
 
-#nav-bar .compose-btn:hover {
-    color: turquoise;
+        :hover {
+            color: turquoise;
+        }
+    }   
 }
